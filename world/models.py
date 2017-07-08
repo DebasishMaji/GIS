@@ -24,3 +24,13 @@ class WorldBorder(models.Model):
     def __str__(self):
         # __unicode__ on Python 2
         return self.name
+
+
+class Zipcode(models.Model):
+    code = models.CharField(max_length=5)
+    poly = models.PolygonField()
+
+
+class Elevation(models.Model):
+    name = models.CharField(max_length=100)
+    rast = models.RasterField()
